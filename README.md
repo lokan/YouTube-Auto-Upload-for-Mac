@@ -1,51 +1,47 @@
 # YouTube Auto Upload for Mac
 
-Automatically upload Final Cut Pro or Compressor exports to YouTube on macOS.
+Automated YouTube uploads on macOS using a simple folder-based workflow.
 
-This project provides a **robust watch-folder workflow** built with:
-- a hardened shell script,
-- macOS Folder Actions (Automator),
-- and the `tokland/youtube-upload` Python client.
-
-Drop a video export into a folder, close your laptop, and let the upload start automatically **once the final file is actually ready**.
-
----
-
-## Why this exists
-
-If you export videos while traveling (events, CES, conferences, hotels, weak Wi-Fi), waiting in front of your Mac for an export to finish is a waste of time.
-
-In real-world conditions, exporting and uploading videos comes with multiple issues:
-
-- Final Cut Pro / Compressor create **temporary or segmented files**
-- Folder Actions trigger **too early**
-- Videos get uploaded **twice**
-- Partial or corrupted files are sent by mistake
-
-This workflow is designed to handle all of that reliably.
+This project is designed for creators, editors, and travelers who want to:
+- export a video
+- drop it into a folder
+- walk away
+- and let YouTube upload happen automatically.
 
 ---
 
-## Features
+## What this project IS
 
-- Watches a folder (`INBOX`) for new exports
-- Ignores temporary / segmented files
-- Waits until the file size is **stable for 60 seconds**
-- Prevents double uploads with a lock mechanism
-- Automatically moves files to:
-  - `DONE` on success
-  - `FAILED` on error
-- Writes one log file per video
-- Uses OAuth (no password storage)
+- A macOS workflow based on folders
+- A shell + Python wrapper around `tokland/youtube-upload`
+- Designed for real-world creator workflows (Final Cut, Compressor, travel setups)
+- Fully local, no cloud services involved
 
 ---
 
-## Folder structure
+## What this project is NOT
 
-```text
-YouTube Auto Upload/
-├── 0 - ADMIN     # script, Python venv, OAuth client
-├── 1 - INBOX     # export destination (watched folder)
-├── 2 - DONE      # successfully uploaded videos
-├── 3 - FAILED    # failed uploads
-└── 4 - LOGS      # per-video logs + locks
+- ❌ Not a GUI application
+- ❌ Not a YouTube client replacement
+- ❌ Not a fork of `tokland/youtube-upload`
+- ❌ Not cross-platform
+
+---
+
+## Requirements
+
+- macOS
+- Homebrew
+- Python 3 (installed via Homebrew)
+- A Google Cloud project with:
+  - YouTube Data API v3 enabled
+  - OAuth **Desktop App**
+  - Your Google account added as a **test user**
+
+---
+
+## Folder structure (this matters)
+
+This workflow relies on a fixed folder structure located in **Downloads**.
+
+On your Mac, you will end up with:
