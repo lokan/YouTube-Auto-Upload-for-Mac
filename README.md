@@ -15,14 +15,14 @@ Drop a video export into a folder, close your laptop, and let the upload start a
 
 If you export videos while traveling (events, CES, conferences, hotels, weak Wi-Fi), waiting in front of your Mac for an export to finish is a waste of time.
 
-This workflow solves common real-world issues:
+In real-world conditions, exporting and uploading videos comes with multiple issues:
 
 - Final Cut Pro / Compressor create **temporary or segmented files**
 - Folder Actions trigger **too early**
 - Videos get uploaded **twice**
-- Partial files are sent by mistake
+- Partial or corrupted files are sent by mistake
 
-This setup avoids all of that.
+This workflow is designed to handle all of that reliably.
 
 ---
 
